@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import StitchCore
+
+let stitch = try! Stitch.initializeAppCLient(withClientAppID: Constants.STITCH_APP_ID)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
+        
         return true
     }
 
